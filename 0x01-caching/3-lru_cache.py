@@ -4,7 +4,7 @@
 from base_caching import BaseCaching
 from collections import OrderedDict
 
-class LIFOCache(BaseCaching):
+class LRUCache(BaseCaching):
     """ Represents an object that allows storing and
     retrieving items from a dictionary with LIFO mechanis.
     """
