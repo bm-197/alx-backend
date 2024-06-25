@@ -31,6 +31,7 @@ class LRUCache(BaseCaching):
     def get(self, key):
         """ Get an item in cache by key
         """
-        self.catch_lines[key] = self.line
-        self.line += 1
+        if key is not None and key in self.catch_data:
+            self.catch_lines[key] = self.line
+            self.line += 1
         return self.cache_data.get(key, None)
