@@ -31,12 +31,13 @@ class LFUCache(BaseCaching):
             lfu_k = freq_k[0]
             k = lfu_k
             i = 1
-            while freq_k[i] <= lfu_k:
+            while i < len(freq_k) and freq_k[i] <= lfu_k:
                 if self.cache_lines[freq_k[i]] < self.cache_lines[lfu_k]:
                     k = freq_k[i]
                 i += 1
             self.cache_data.pop(k)
             self.cache_lines.pop(k)
+            self.cache_freq.pop(k)
             print("DISCARD: {}".format(k))
         
     def get(self, key):
