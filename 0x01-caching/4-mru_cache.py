@@ -37,4 +37,3 @@ class MRUCache(BaseCaching):
             self.cache_lines[key] = self.line
             self.line += 1
         return self.cache_data.get(key, None)
-MRUCache = __import__('4-mru_cache').MRUCache
