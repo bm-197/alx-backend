@@ -5,7 +5,7 @@ import { createClient, print } from 'redis';
 const client = createClient();
 
 client.on('error', (err) => {
-  console.log('Redis client not connected to server:', err.toString());
+  console.log('Redis client connected to server:', err.toString());
 });
 
 const setNewShool = (schoolName, value) => {
